@@ -1,5 +1,5 @@
 # swimming_pool
 
-Finel project:
+Final project:
 - [x] GAJIbl4
 - [x] ∀lefskii
