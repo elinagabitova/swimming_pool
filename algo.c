@@ -8,7 +8,7 @@ int algo(char **arr)
   i = 0;
   j = 0;
   
-  len = count(**arr);
+  len = count(**arr); //здесь
   while (j != )
 }
 
