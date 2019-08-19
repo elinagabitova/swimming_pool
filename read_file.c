@@ -16,5 +16,6 @@ char	*read_file(char *filename)
 	file = open(filename, O_RDONLY);
 	ret = read(file, str, BUF_SIZE);
 	str1 = str;
+	close(file);
 	return (str1);
 }
