@@ -1,19 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bsq.h                                              :+:      :+:    :+:   */
+/*   new_line.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdiane <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/19 20:39:25 by rdiane            #+#    #+#             */
-/*   Updated: 2019/08/19 22:12:34 by rdiane           ###   ########.fr       */
+/*   Created: 2019/08/19 22:02:07 by rdiane            #+#    #+#             */
+/*   Updated: 2019/08/19 23:19:20 by rdiane           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BSQ_H
-# define BSQ_H
+char **malloc_str(char*str)
+{
+	while
+}
 
-char	*read_file (char *filename);
-char	**new_line (char *str);
+char **new_line(char *str)
+{
+	int i;
+	int j;
+	char **res;
 
-#endif
+	i = 0;
+	j = 0;
+	while (*str)
+		{
+			if (*str == '\n' && *(str + 1) != '\0')
+				{
+					res[i][j] = '\0';
+					str++;
+					i++;
+					j = 0;
+				}
+			else
+			{
+			res[i][j] = *str;
+			j++;
+			str++;
+			}
+		}
+	return (res);
+}
