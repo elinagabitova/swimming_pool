@@ -26,3 +26,14 @@ int count (char **arr)
   }
   return (len);
 }
+
+char nmbr (char *str)
+{
+  char num[20];
+  
+  while (str > '0' && str < '9')
+  {
+    num = str + 
+    str++;
+  }
+}
