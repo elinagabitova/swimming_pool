@@ -30,7 +30,7 @@ int sum(char arr[][8], int i, int j, char c)
    int s;
 
    s = 0;
-   while (i <= 1)
+   while (i >= 1)
    {
        if (arr[i][j] == c)
            s++;
