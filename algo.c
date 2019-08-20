@@ -8,8 +8,15 @@ int algo(char **arr)
   i = 0;
   j = 0;
   
-  len = count(**arr); // порверить этот вызов
-  while (j != )
+  len = count(**arr); // проверить этот вызов
+  while (j != nmbr(arr))
+  {
+    while (i != len)
+    {
+      
+      i++;
+    }
+    j++;
 }
 
 int count (char **arr)
