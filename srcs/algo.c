@@ -25,15 +25,15 @@ int        ft_atoi(char *str)
    return (s * n);
 }
 
-int sum(char **arr, int i, int j, char c)
+int sum(char arr[][8], int i, int j, char c)
 {
    int s;
 
    s = 0;
-   while (i != 1)
+   while (i <= 1)
    {
        if (arr[i][j] == c)
-           s = s + 1;
+           s++;
        i--;
    }
    return (s);
@@ -111,38 +111,49 @@ int **algo(char arr[][8])
    int i;
    int j;
    char *sign;
-   int **mas;
-
-   i = 0;
-   j = 0;
    
-   sign = signs(arr[0]);
-   i = nmbr(arr[0]);
-   //j = count(arr[1]);
-  /*while (j != nmbr(arr[0]))
+   int n;
+   int m;
+   int **mas;
+   
+   n = nmbr(arr[0]); // строки
+   m = count(arr[1]);
+   
+   mas = (int*)malloc(sizeof(int*) * m);
+   j = 0;
+   while (j < n)
    {
-       while (i != count(arr))
+      mas[j] = (int)malloc(sizeof(int)*n);
+      j++;
+   }
+   i = 1;
+   j = 0;
+   sign = signs(arr[0]);
+  while (i <= n)
+   {
+    printf("he1re");
+       while (j <= m)
        {
            if (i == 1 && j == 0)
            {
-               if (mas[1][0] == sign[1])
-                   mas[1][0] = 1;
+               if (arr[1][0] == sign[1])
+                   mas[0][0] = 1;
                else
-                   mas[1][0] = 0;
+                   mas[0][0] = 0;
            }
-           mas[i][j] = 0 + mas[i-1][j] + sum(arr, i, j, sign[1]);
-           i++;
+          else
+            mas[i][j] = mas[i][j-1] + sum(arr, i, j, sign[1]);
+          j++;
        }
-       j++;
+       i++;
    }
-   */
    return (mas);
 }
 
 int main()
 {
- char arr[8][8] = {"7777*x\0", "------x\0", "---x---\0", "-------\0", "-------\0", "--x----\0", "-------\0", "-------\0"};
- int **mas;
- mas = algo(arr);
+ char arr[8][8] = {"7.x*\0", "------x\0", "---x---\0", "-------\0", "-------\0", "--x----\0", "-------\0", "-------\0"};
+ 
+ int **mas = algo(arr);
  return(0);
 }
