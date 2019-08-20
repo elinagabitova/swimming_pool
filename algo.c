@@ -39,4 +39,6 @@ char nmbr (char *str)
     i++;
     str++;
   }
+  num = ft_atoi(num);
+  return (num);
 }
