@@ -36,15 +36,36 @@ int count (char **arr)
 char nmbr(char *str)
 {
   char num[20];
+  char sign[2];
   int i;
+  int j;
   
+  j = 2;
   i = 0;
-  while (str > '0' && str < '9')
+  while (str[i] != '\0')
   {
-    num[i] = str;
+    num[i] = str[i];
     i++;
-    str++;
+  }
+  while (i != 0)
+  {
+    if (num[i] =! NULL)
+    {
+      while (j != 0)
+      {
+        num[i] = sign[j];
+        j--;
+      }
+    }
+    i--;
   }
   num = ft_atoi(num); // инициализировать ft_atoi.c
   return (num);
 }
+ 
+
+  
+  
+  
+  
+  
