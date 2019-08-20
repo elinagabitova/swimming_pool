@@ -106,10 +106,11 @@ char *signs(char str[]) // поиск символов для карты
    return (sign);
 }
 
-int **algo(char arr[][8]) //[8] - просто костыль для проверки основных функций
+int **algo(char arr[][8])
 {
    int i;
    int j;
+   int nnn;
    char *sign;
    
    int n;
@@ -120,6 +121,7 @@ int **algo(char arr[][8]) //[8] - просто костыль для прове�
    m = count(arr[1]);
    
    mas = (int*)malloc(sizeof(int*) * m);
+   nnn = 0;
    j = 0;
    while (j < n)
    {
@@ -141,12 +143,20 @@ int **algo(char arr[][8]) //[8] - просто костыль для прове�
                else
                    mas[0][0] = 0;
            }
-          else if(j == 0) //отсюда где-то...
-             mas[i][j] = sum(arr, i, j, sign[1]);
+           else if( j == 0)
+           {
+             nnn = sum(arr, i, j, sign[1]);
+             printf("%d", nnn);
+             mas[i][j] = nnn;
+           }
           else
-            mas[i][j] = mas[i][j-1] + sum(arr, i, j, sign[1]); // ...до сюда где-то. Не проходит
+          {
+            nnn = 0 + mas[i][j-1] + sum(arr, i, j, sign[1]);
+            mas[i][j] = nnn;
+          }
           j++;
        }
+       j = 0;
        i++;
    }
    return (mas);
