@@ -141,8 +141,10 @@ int **algo(char arr[][8])
                else
                    mas[0][0] = 0;
            }
+          else if(j == 0) //отсюда где-то...
+             mas[i][j] = sum(arr, i, j, sign[1]);
           else
-            mas[i][j] = mas[i][j-1] + sum(arr, i, j, sign[1]); // Жень, эта строка не проходит
+            mas[i][j] = mas[i][j-1] + sum(arr, i, j, sign[1]); // ...до сюда где-то. Не проходит
           j++;
        }
        i++;
