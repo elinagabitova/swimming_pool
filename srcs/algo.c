@@ -106,7 +106,7 @@ char *signs(char str[]) // поиск символов для карты
    return (sign);
 }
 
-int **algo(char arr[][8])
+int **algo(char arr[][8]) //[8] - просто костыль для проверки основных функций
 {
    int i;
    int j;
