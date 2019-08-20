@@ -30,10 +30,13 @@ int count (char **arr)
 char nmbr (char *str)
 {
   char num[20];
+  int i;
   
+  i = 0;
   while (str > '0' && str < '9')
   {
-    num = str + 
+    num[i] = str;
+    i++;
     str++;
   }
 }
