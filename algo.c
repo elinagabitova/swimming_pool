@@ -7,18 +7,18 @@ int algo(char **arr)
  
   i = 0;
   j = 0;
-  sign = signs(arr[1]);
-  while (j != nmbr(arr[1][0]))
+  sign = signs(arr[i][1]); //я не знаю, как правильно тут задать строку
+  while (j != nmbr(arr[i][1])) 
   {
     while (i != count(arr))
     {
-      
+      if (arr[i][j] == sign[)
       i++;
     }
     j++;
 }
 
-int count (char **arr)
+int count (char **arr) // подсчет столбцов
 {
   int i;
   int len;
@@ -33,7 +33,7 @@ int count (char **arr)
   return (len);
 }
 
-int nmbr(char *str) // это для подсчета строк
+int nmbr(char *str) // подсчет строк из первой строки массива
 {
   char num[20]; 
   int i;
