@@ -4,21 +4,42 @@ int algo(char **arr)
   int j;
   char *sign;
   int **mas;
- 
-  i = 0;
+
+  i = 1;
   j = 0;
-  sign = signs(arr[i][1]); //я не знаю, как правильно тут задать строку
-  while (j != nmbr(arr[i][1])) 
+  sign = signs(arr[0]);
+  while (j != nmbr(arr[0])) 
   {
     while (i != count(arr))
     {
-      if (arr[i][j] == sign[)
+      if (i == 1 && j == 0)
+      {
+        if (mas[1][0] == sign[2])
+          mas[1][0] = 1;
+        else
+          mas[1][0] = 0;
+      }
+      mas[i][j] = 0 + mas[i-1][j] + sum(mas, i, j);
       i++;
     }
-    j++;
+  j++;
+  }
 }
 
-int count (char **arr) // подсчет столбцов
+int sum(char **arr, int i, int j)
+{
+  int sum_;
+  
+  sum_ = 0;
+  while (j != 1)
+  {
+    sum_ = sum_ + arr[i][j];
+    j--;
+  }
+  return (sum_);
+}
+
+int count (char **arr) // подсчет столбцов (или длина строк)
 {
   int i;
   int len;
@@ -52,7 +73,7 @@ int nmbr(char *str) // подсчет строк из первой строки 
   return (i); // это интовские переменные, а алгоритм принимает немного другое...
 }
 
-char signs(char *str)
+char *signs(char *str) // поиск символов для карты
 {
   char sign[2];
   int i;
