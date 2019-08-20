@@ -142,7 +142,7 @@ int **algo(char arr[][8])
                    mas[0][0] = 0;
            }
           else
-            mas[i][j] = mas[i][j-1] + sum(arr, i, j, sign[1]);
+            mas[i][j] = mas[i][j-1] + sum(arr, i, j, sign[1]); // Жень, эта строка не проходит
           j++;
        }
        i++;
