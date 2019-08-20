@@ -8,7 +8,7 @@ int algo(char **arr)
   i = 0;
   j = 0;
   
-  len = count(**arr); //здесь
+  len = count(**arr); // порверить этот вызов
   while (j != )
 }
 
@@ -39,6 +39,6 @@ char nmbr (char *str)
     i++;
     str++;
   }
-  num = ft_atoi(num);
+  num = ft_atoi(num); // инициализировать ft_atoi.c
   return (num);
 }
