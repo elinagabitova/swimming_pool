@@ -1,4 +1,4 @@
-int algo(char **arr)
+int **algo(char **arr)
 {
   int i;
   int j;
@@ -24,6 +24,7 @@ int algo(char **arr)
     }
   j++;
   }
+  return (mas);
 }
 
 int sum(char **arr, int i, int j)
