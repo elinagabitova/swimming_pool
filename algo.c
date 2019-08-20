@@ -7,7 +7,6 @@ int algo(char **arr)
  
   i = 0;
   j = 0;
-  
   len = count(**arr); // проверить этот вызов
   while (j != nmbr(arr))
   {
@@ -34,7 +33,7 @@ int count (char **arr)
   return (len);
 }
 
-char nmbr (char *str)
+char nmbr(char *str)
 {
   char num[20];
   int i;
