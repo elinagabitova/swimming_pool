@@ -35,7 +35,7 @@ int count (char **arr)
 
 char nmbr(char *str)
 {
-  char num[20];
+  char num[20]; // это для подсчета строк
   char sign[2];
   int i;
   int j;
@@ -43,29 +43,23 @@ char nmbr(char *str)
   j = 2;
   i = 0;
   while (str[i] != '\0')
-  {
-    num[i] = str[i];
     i++;
-  }
   while (i != 0)
   {
-    if (num[i] =! NULL)
+    if (str[i] =! NULL) //Никит, эта херня работает?
     {
-      while (j != 0)
+      num[i] = str[i];
+      while (j != 0) //отсчитываем последние три числа 
       {
-        num[i] = sign[j];
+        sign[j] = str[i];
         j--;
       }
+      i--;
     }
-    i--;
   }
   num = ft_atoi(num); // инициализировать ft_atoi.c
-  return (num);
+  return (num, sign);
 }
- 
-
-  
-  
   
   
   
