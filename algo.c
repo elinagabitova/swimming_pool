@@ -33,7 +33,7 @@ int count (char **arr)
   return (len);
 }
 
-char nmbr(char *str)
+int nmbr(char *str)
 {
   char num[20]; // это для подсчета строк
   char sign[2];
@@ -58,6 +58,7 @@ char nmbr(char *str)
     }
   }
   num = ft_atoi(num); // инициализировать ft_atoi.c
+  sign = ft_atoi(sign);
   return (num, sign);
 }
   
