@@ -1,8 +1,16 @@
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_file.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rdiane <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/19 20:43:14 by rdiane            #+#    #+#             */
+/*   Updated: 2019/08/20 15:06:54 by rdiane           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "bsq.h"
 
 int		count_bytes(char *filename)
 {
