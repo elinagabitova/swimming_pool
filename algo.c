@@ -46,8 +46,6 @@ int nmbr(char *str)
     i++;
   while (i != 0)
   {
-    if (str[i] =! NULL) //Никит, эта херня работает?
-    {
       num[i] = str[i];
       while (j != 0) //отсчитываем последние три числа 
       {
@@ -55,11 +53,10 @@ int nmbr(char *str)
         j--;
       }
       i--;
-    }
-  }
-  num = ft_atoi(num); // инициализировать ft_atoi.c
-  sign = ft_atoi(sign);
-  return (num, sign);
+   }
+  i = ft_atoi(num); // инициализировать ft_atoi.c
+  j = ft_atoi(sign);
+  return (i, j);
 }
   
   
