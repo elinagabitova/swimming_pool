@@ -42,16 +42,11 @@ int sum(char **arr, int i, int j, char c)
 int count (char *arr) // подсчет столбцов (или длина строк)
 {
    int n;
-   int len;
 
    n = 0;
-   len = 0;
-   while (arr[1] != '\0')
-   {
-       len++;
+   while (arr[n] != '\0')
        n++;
-   }
-   return (len);
+   return (n);
 }
 
 int nmbr(char *str) // подсчет строк из первой строки массива
@@ -62,12 +57,25 @@ int nmbr(char *str) // подсчет строк из первой строки 
 
    j = 2;
    i = 0;
-   while (str[i] != '\0')
-       i++;
-   while (i != -1)
+   while (*str != '\0')
    {
-       num[i] = str[i];
+       str++;
+       i++;
+   }
+   str--;
+   while (j >= 0)
+   {
+      str--;
+      j--;
+      i--;
+   }
+   num[i] = '\0';
+   i--;
+   while (i >= 0)
+   {
+       num[i] = *str;
        i--;
+       str--;
    }
    i = ft_atoi(num); // инициализировать ft_atoi.c
    return (i);
@@ -109,7 +117,9 @@ int **algo(char arr[][8])
    j = 0;
    
    sign = signs(arr[0]);
- /*   while (j != nmbr(arr[0]))
+   i = nmbr(arr[0]);
+   //j = count(arr[1]);
+  /*while (j != nmbr(arr[0]))
    {
        while (i != count(arr))
        {
@@ -124,15 +134,15 @@ int **algo(char arr[][8])
            i++;
        }
        j++;
-   }*/
+   }
+   */
    return (mas);
 }
 
 int main()
 {
- char arr[8][8] = {"7.*x\0", "------x\0", "---x---\0", "-------\0", "-------\0", "--x----\0", "-------\0", "-------\0"};
+ char arr[8][8] = {"7777*x\0", "------x\0", "---x---\0", "-------\0", "-------\0", "--x----\0", "-------\0", "-------\0"};
  int **mas;
  mas = algo(arr);
- printf("%d", ft_atoi(arr[0]));
  return(0);
 }
