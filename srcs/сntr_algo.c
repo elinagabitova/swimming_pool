@@ -3,21 +3,26 @@ int сntr_algo(int i, int j, int mas[][]) // считаем это все гов
   int n;
   int m;
   int **arr;
+  int best;
   
+  best = 0;
   n = 0;
   m = j;
+  
   while (n <= i)
   {
-    arr = init_mas(i, arr);
-    if (check(arr, i, i, i) > 0)
+    arr = init_mas(j, i, m, arr);
+    if (check(arr, i, m, j) > 0)
     {
-     m = i + 1;  
-    }
-    n++;
+      while(m <= j)
+      {
+        n = j - 1; 
+      }
+      n++;
   }
 }
  
-int init_mas(int width, int mas) // создаем массив 1*1, 2*2 и т.д. для проверки суммы
+int init_mas(int width, int i, int j, int mas) // создаем массив 1*1, 2*2 и т.д. для проверки суммы
 {
   int i;
   int j;
@@ -42,7 +47,7 @@ int init_mas(int width, int mas) // создаем массив 1*1, 2*2 и т.�
 int check(int mas, int i, int j, int width) // проверяем сумму в углах
 {
   int sum;
-  sum = mas[i][j] + mas[i - width][j] + mas[i][j - width] - mas[i - width][j - width];
+  sum = mas[i][j] - mas[i - width][j] - mas[i][j - width] + mas[i - width][j - width];
   return (sum);
 }
   
