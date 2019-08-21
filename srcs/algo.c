@@ -83,13 +83,12 @@ int nmbr(char *str) // подсчет строк из первой строки 
 
 char *signs(char str[]) // поиск символов для карты
 {
-   char *sign;
+   char sign[3];
    int i;
    int j;
    
   i = 0;
   j = 2;
-  sign = (char*)malloc(sizeof(char) * 4);
   while (*str != '\0')
   {
      i++;
@@ -115,26 +114,30 @@ int **algo(char arr[][8])
    
    int n;
    int m;
-   int **mas;
    
-   n = nmbr(arr[0]); // строки
-   m = count(arr[1]);
-   
-   mas = (int*)malloc(sizeof(int*) * m);
    nnn = 0;
+   i = 0;
    j = 0;
-   while (j < n)
+   n = nmbr(arr[0]); // строки
+   m = count(arr[1]); // столбцы
+   int mas[n][m];
+   while (j <= m)
    {
-      mas[j] = (int)malloc(sizeof(int)*n);
-      j++;
+     while (i <= n)
+     {
+       mas[i][j] = 0;
+       i++;
+     }
+     j++;
    }
+   
    i = 1;
    j = 0;
-   sign = signs(arr[0]);
-  while (i <= n)
+  sign = signs(arr[0]);
+  while (j <= m)
    {
     printf("he1re");
-       while (j <= m)
+       while (i <= n)
        {
            if (i == 1 && j == 0)
            {
