@@ -1,27 +1,21 @@
-int main()
-{
-  int mas[6][12] = { {0,0,0,0,0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,1,1,1,1,1}, {0,0,0,0,0,0,0,1,1,1,1,1}, {0,0,0,0,0,0,0,1,1,1,1,1}, 
-  {0,0,0,0,1,1,1,2,3,3,3,3}, {0,0,0,0,1,1,2,3,4,4,4,4}, {0,0,0,0,1,1,1,2,3,3,3,3} }; 
-  
-  
-}
-
-int count()
+int count(int i, int **mas) // считаем это все говно и прогоняем условия
 {
   int n;
-  int m;
-  int i;
+  int **arr;
   
-  i = 0;
-  n = 6; // надо указать ширину
-  m = 12; // и длину как-то через функции, которые валяются в algo.c
-  
-  while (i <= 6)
+  n = 0;
+  while (n <= i)
   {
-    i
+    arr = init_mas(i, arr);
+    if (check(arr, i, i, i) > 0)
+    {
+      
+    }
+    n++;
+  }
 }
  
-int init_mas(int width, int mas)
+int init_mas(int width, int mas) // создаем массив 1*1, 2*2 и т.д.
 {
   int i;
   int j;
@@ -40,14 +34,27 @@ int init_mas(int width, int mas)
     }
     i++;
   }
+  return(arr);
 }
   
-int check()
+int check(int mas, int i, int j, int width) // проверяем сумму в углах
 {
-  
+  int sum;
+  sum = mas[i][j] + mas[i - width][j] + mas[i][j - width] - mas[i - width][j - width];
+  return (sum);
 }
   
+char fill (i
+ 
+ 
+ 
+ int main()
+{
+  int mas[6][12] = { {0,0,0,0,0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,1,1,1,1,1}, {0,0,0,0,0,0,0,1,1,1,1,1}, {0,0,0,0,0,0,0,1,1,1,1,1}, 
+  {0,0,0,0,1,1,1,2,3,3,3,3}, {0,0,0,0,1,1,2,3,4,4,4,4}, {0,0,0,0,1,1,1,2,3,3,3,3} }; 
   
-  
+  count(6, mas);
+  return (0);
+}
   
   
