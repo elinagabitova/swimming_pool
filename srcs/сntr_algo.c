@@ -24,7 +24,7 @@ int сntr_algo(int i, int j, int **mas) // считаем это все говн
         }
         else if (check(arr, j, n, i) == 0)
         {
-            return (k, f);
+            return (arr);
         }
         m--;
     }
@@ -62,17 +62,13 @@ int check(int mas, int i, int j, int width) // проверяем сумму в 
   sum = mas[i][j] - mas[i - width][j] - mas[i][j - width] + mas[i - width][j - width];
   return (sum);
 }
-  
-char fill (i
- 
- 
- 
- int main()
+
+int main()
 {
   int mas[6][12] = { {0,0,0,0,0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,1,1,1,1,1}, {0,0,0,0,0,0,0,1,1,1,1,1}, {0,0,0,0,0,0,0,1,1,1,1,1}, 
   {0,0,0,0,1,1,1,2,3,3,3,3}, {0,0,0,0,1,1,2,3,4,4,4,4}, {0,0,0,0,1,1,2,3,4,4,4,4} }; 
   
-  count(6, mas);
+  сntr_algo(6, 12, mas);
   return (0);
 }
   
