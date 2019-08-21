@@ -83,7 +83,7 @@ int nmbr(char *str) // подсчет строк из первой строки 
 
 char *signs(char str[]) // поиск символов для карты
 {
-   char sign[3];
+   char sign[4];
    int i;
    int j;
    
@@ -120,26 +120,27 @@ int **algo(char arr[][8])
    j = 0;
    n = nmbr(arr[0]); // строки
    m = count(arr[1]); // столбцы
+   
    int mas[n][m];
-   while (j <= m)
+   while (i <= n)
    {
-     while (i <= n)
+     while (j <= m)
      {
        mas[i][j] = 0;
-       i++;
+       j++;
      }
-     j++;
+     i++;
    }
    
-   i = 1;
-   j = 0;
+   i = 0;
+   j = 1;
   sign = signs(arr[0]);
-  while (j <= m)
+  while (i <= n)
    {
     printf("he1re");
-       while (i <= n)
+       while (j <= m)
        {
-           if (i == 1 && j == 0)
+           if (i == 0 && j == 1)
            {
                if (arr[1][0] == sign[1])
                    mas[0][0] = 1;
