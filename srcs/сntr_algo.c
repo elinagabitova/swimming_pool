@@ -3,8 +3,8 @@ int сntr_algo(int i, int j, int **mas) // считаем это все говн
   int n;
   int m;
   int **arr;
-  int k;
-  int f;
+  int k; // переменные
+  int f; // перемещения
   
   k = 0;
   f = 0;
