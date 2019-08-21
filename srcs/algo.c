@@ -120,6 +120,7 @@ int **algo(char arr[][8])
    j = 0;
    n = nmbr(arr[0]); // строки
    m = count(arr[1]); // столбцы
+   sign = signs(arr[0]);
    
    int mas[n][m];
    while (i <= n)
@@ -130,14 +131,13 @@ int **algo(char arr[][8])
        j++;
      }
      i++;
+     j = 0;
    }
    
    i = 0;
    j = 1;
-  sign = signs(arr[0]);
   while (i <= n)
    {
-    printf("he1re");
        while (j <= m)
        {
            if (i == 0 && j == 1)
@@ -147,7 +147,7 @@ int **algo(char arr[][8])
                else
                    mas[0][0] = 0;
            }
-           else if( j == 0)
+           else if (j == 0)
            {
              nnn = sum(arr, i, j, sign[1]);
              printf("%d", nnn);
@@ -160,8 +160,8 @@ int **algo(char arr[][8])
           }
           j++;
        }
-       j = 0;
        i++;
+       j = 0;
    }
    return (mas);
 }
