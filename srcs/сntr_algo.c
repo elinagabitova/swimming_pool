@@ -1,21 +1,23 @@
-int count(int i, int **mas) // считаем это все говно и прогоняем условия
+int сntr_algo(int i, int j, int mas[][]) // считаем это все говно и прогоняем условия
 {
   int n;
+  int m;
   int **arr;
   
   n = 0;
+  m = j;
   while (n <= i)
   {
     arr = init_mas(i, arr);
     if (check(arr, i, i, i) > 0)
     {
-      
+     m = i + 1;  
     }
     n++;
   }
 }
  
-int init_mas(int width, int mas) // создаем массив 1*1, 2*2 и т.д.
+int init_mas(int width, int mas) // создаем массив 1*1, 2*2 и т.д. для проверки суммы
 {
   int i;
   int j;
