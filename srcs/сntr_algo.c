@@ -1,24 +1,40 @@
-int сntr_algo(int i, int j, int mas[][]) // считаем это все говно и прогоняем условия
+int сntr_algo(int i, int j, int **mas) // считаем это все говно и прогоняем условия
 {
   int n;
+  int m;
   int **arr;
-  int best_width;
-  int best_pos;
+  int k;
+  int f;
   
-  best_width = 0;
-  best_pos = 0;
-  n = j;
+  k = 0;
+  f = 0;
+  m = j;
+  n = i;
+  arr = init_mas(j, mas, f, k);
   
   while (n <= i)
   {
-    arr = init_mas(j, i, n, arr);
-    while (check(arr, j, n, i) > 0)
+    m = 0;
+    while (m <= j)
     {
-      n = i + 1;
+        if (check(arr, j, n, i) > 0)
+        {
+            arr = init_mas(j, mas, f, k);
+            f++;
+        }
+        else if (check(arr, j, n, i) == 0)
+        {
+            return (k, f);
+        }
+        m--;
     }
+    k++;
+    n--;
+  }
+  return (0);
 }
  
-int init_mas(int width, int i, int j, int mas) // создаем массив 1*1, 2*2 и т.д. для проверки суммы
+int init_mas(int width, int mas, int f, int k) // создаем массив 1*1, 2*2 и т.д. для проверки суммы
 {
   int i;
   int j;
@@ -32,7 +48,7 @@ int init_mas(int width, int i, int j, int mas) // создаем массив 1*
     j = 0;
     while (j < width)
     {
-      arr[i][j] = mas[i][j];
+      arr[i][j] = mas[i+f][j+k];
       j++;
     }
     i++;
