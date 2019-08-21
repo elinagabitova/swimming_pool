@@ -1,25 +1,21 @@
 int сntr_algo(int i, int j, int mas[][]) // считаем это все говно и прогоняем условия
 {
   int n;
-  int m;
   int **arr;
-  int best;
+  int best_width;
+  int best_pos;
   
-  best = 0;
-  n = 0;
-  m = j;
+  best_width = 0;
+  best_pos = 0;
+  n = j;
   
   while (n <= i)
   {
-    arr = init_mas(j, i, m, arr);
-    if (check(arr, i, m, j) > 0)
+    arr = init_mas(j, i, n, arr);
+    while (check(arr, j, n, i) > 0)
     {
-      while(m <= j)
-      {
-        n = j - 1; 
-      }
-      n++;
-  }
+      n = i + 1;
+    }
 }
  
 int init_mas(int width, int i, int j, int mas) // создаем массив 1*1, 2*2 и т.д. для проверки суммы
@@ -58,7 +54,7 @@ char fill (i
  int main()
 {
   int mas[6][12] = { {0,0,0,0,0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,1,1,1,1,1}, {0,0,0,0,0,0,0,1,1,1,1,1}, {0,0,0,0,0,0,0,1,1,1,1,1}, 
-  {0,0,0,0,1,1,1,2,3,3,3,3}, {0,0,0,0,1,1,2,3,4,4,4,4}, {0,0,0,0,1,1,1,2,3,3,3,3} }; 
+  {0,0,0,0,1,1,1,2,3,3,3,3}, {0,0,0,0,1,1,2,3,4,4,4,4}, {0,0,0,0,1,1,2,3,4,4,4,4} }; 
   
   count(6, mas);
   return (0);
